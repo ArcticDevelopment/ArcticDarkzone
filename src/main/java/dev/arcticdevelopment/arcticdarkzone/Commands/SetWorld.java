@@ -20,6 +20,11 @@ public class SetWorld implements CommandExecutor {
 		Location location = player.getLocation();
 		String worldString = location.getWorld().getName();
 
+		if (!player.hasPermission("arctic.darkzone.admin")) {
+			AOutput.error(player, AConfig.getString("messages.permission-denied"));
+			return false;
+		}
+
 		if (args.length == 0) {
 
 			AConfig.set("darkzone-world", location.getWorld().getName());

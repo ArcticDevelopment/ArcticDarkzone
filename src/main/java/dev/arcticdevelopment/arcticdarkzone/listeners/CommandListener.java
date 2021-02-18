@@ -29,7 +29,7 @@ public class CommandListener implements Listener {
 			return;
 		}
 
-		AOutput.error(player, AConfig.getString("messages.no-permission"));
+		AOutput.error(player, AConfig.getString("messages.command-blocked"));
 		event.setCancelled(true);
 	}
 }

@@ -20,6 +20,11 @@ public class SetExitLocation implements CommandExecutor {
 		Location location = player.getLocation();
 		String tpStringLocation = ASerializer.serializeLocation(location);
 
+		if (!player.hasPermission("arctic.darkzone.admin")) {
+			AOutput.error(player, AConfig.getString("messages.permission-denied"));
+			return false;
+		}
+
 		if (location.getWorld().getName().equals(AConfig.get("darkzone-world"))) {
 
 			String message = AConfig.getString("messages.set-exit-inside-darkzone:");
