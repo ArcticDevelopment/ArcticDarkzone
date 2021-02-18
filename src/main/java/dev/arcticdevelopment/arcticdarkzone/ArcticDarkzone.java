@@ -1,4 +1,4 @@
-package src.dev.arcticdevelopment.arcticdarkzone;
+package dev.arcticdevelopment.arcticdarkzone;
 
 import dev.kyro.arcticapi.ArcticAPI;
 import org.bukkit.plugin.java.JavaPlugin;
