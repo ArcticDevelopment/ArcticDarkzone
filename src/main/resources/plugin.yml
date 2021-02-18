@@ -3,4 +3,6 @@ authors: [ KyroKrypt, Finn ]
 version: 1.0.0
 main: dev.arcticdevelopment.arcticdarkzone.ArcticDarkzone
 description: Darkzone plugin
-#commands:
+commands:
+  setexit:
+  setworld:

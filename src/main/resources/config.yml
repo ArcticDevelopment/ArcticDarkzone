@@ -1,0 +1,21 @@
+config-version: 1.1.0
+####################################################
+##                                                ##
+##         Arctic Darkzone Configuration          ##
+##           Developed by Finn and Kyro           ##
+##                                                ##
+####################################################
+
+# Set the plugin prefix
+prefix: "&7[&b&lA&7]&f "
+error-prefix: "&8[&c&lA&8]&f "
+
+messages:
+  no-permission: "&cYou may not use commands here!"
+  set-world: "Set darkzone world to %world%!"
+  world-does-not-exsist: "&cWorld %world% does not exsist"
+  set-exit-location: "Set darkzone exit location"
+  bypassed-darkzone: "You were able to execute %command% because you have permission to bypass the darkzone"
+
+darkzone-world: "darkzone"
+exit-teleport-location:

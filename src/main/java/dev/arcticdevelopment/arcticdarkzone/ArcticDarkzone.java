@@ -1,5 +1,9 @@
 package dev.arcticdevelopment.arcticdarkzone;
 
+import dev.arcticdevelopment.arcticdarkzone.Commands.SetExitLocation;
+import dev.arcticdevelopment.arcticdarkzone.Commands.SetWorld;
+import dev.arcticdevelopment.arcticdarkzone.listeners.CommandListener;
+import dev.arcticdevelopment.arcticdarkzone.listeners.PortalListener;
 import dev.kyro.arcticapi.ArcticAPI;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -33,11 +37,13 @@ public class ArcticDarkzone extends JavaPlugin {
 
 	private void registerCommands() {
 
-//		getCommand("printer").setExecutor(new PrinterCommand());
+		getCommand("setexit").setExecutor(new SetExitLocation());
+		getCommand("setworld").setExecutor(new SetWorld());
 	}
 
 	private void registerListeners() {
 
-//		getServer().getPluginManager().registerEvents(new PrinterEvents(), this);
+		getServer().getPluginManager().registerEvents(new CommandListener(), this);
+		getServer().getPluginManager().registerEvents(new PortalListener(), this);
 	}
 }

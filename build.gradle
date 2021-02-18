@@ -17,5 +17,5 @@ repositories {
 dependencies {
     compileOnly 'org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT'
 
-    compile 'com.github.ArcticDevelopment:ArcticAPI:1.3.2'
+    compile 'com.github.ArcticDevelopment:ArcticAPI:1.4.3'
 }
