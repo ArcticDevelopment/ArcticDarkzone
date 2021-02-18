@@ -14,6 +14,7 @@ public class CommandListener implements Listener {
 	@EventHandler(ignoreCancelled = true)
 	public static void onCommand(PlayerCommandPreprocessEvent event) {
 
+		String command = event.getMessage();
 		Player player = event.getPlayer();
 
 		if (!player.getLocation().getWorld().getName().equals(AConfig.getString("darkzone-world"))) {
@@ -23,6 +24,7 @@ public class CommandListener implements Listener {
 		if (player.hasPermission("arctic.darkzone.bypass")) {
 
 			String message = ArcticDarkzone.INSTANCE.getConfig().getString("messages.bypassed-darkzone");
+			message = message.replaceAll("%command%", command);
 			AOutput.send(player, message);
 			return;
 		}
