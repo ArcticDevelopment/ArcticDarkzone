@@ -23,8 +23,7 @@ public class PortalListener implements Listener {
 		Player player = event.getPlayer();
 		Location location = player.getLocation();
 
-
-		if (!(location.getWorld().getName().equals(ArcticDarkzone.INSTANCE.getConfig().getString("messages.darkzone-world")))) {
+		if (!(location.getWorld().getName().equals(AConfig.getString("darkzone-world")))) {
 
 			return;
 		}
