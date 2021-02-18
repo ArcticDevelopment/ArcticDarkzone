@@ -22,7 +22,7 @@ public class SetExitLocation implements CommandExecutor {
 
 		if (location.getWorld().getName().equals(AConfig.get("darkzone-world"))) {
 
-			String message = ArcticDarkzone.INSTANCE.getConfig().getString("messages.set-exit-inside-darkzone:");
+			String message = AConfig.getString("messages.set-exit-inside-darkzone:");
 			message = message.replaceAll("%world%", location.getWorld().getName());
 			AOutput.error(player, message);
 			return false;
@@ -31,7 +31,7 @@ public class SetExitLocation implements CommandExecutor {
 		AConfig.set("exit-teleport-location",tpStringLocation);
 		ArcticDarkzone.INSTANCE.saveConfig();
 
-		String message = ArcticDarkzone.INSTANCE.getConfig().getString("messages.set-exit-location");
+		String message = AConfig.getString("messages.set-exit-location");
 		message = message.replaceAll("%world%", location.getWorld().getName());
 		AOutput.send(player, message);
 

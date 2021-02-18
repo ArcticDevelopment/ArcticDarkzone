@@ -23,13 +23,13 @@ public class CommandListener implements Listener {
 
 		if (player.hasPermission("arctic.darkzone.bypass")) {
 
-			String message = ArcticDarkzone.INSTANCE.getConfig().getString("messages.bypassed-darkzone");
+			String message = AConfig.getString("messages.bypassed-darkzone");
 			message = message.replaceAll("%command%", command);
 			AOutput.send(player, message);
 			return;
 		}
 
-		AOutput.error(player, ArcticDarkzone.INSTANCE.getConfig().getString("messages.no-permission"));
+		AOutput.error(player, AConfig.getString("messages.no-permission"));
 		event.setCancelled(true);
 	}
 }

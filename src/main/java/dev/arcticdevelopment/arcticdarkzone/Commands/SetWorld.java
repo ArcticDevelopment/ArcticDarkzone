@@ -28,7 +28,7 @@ public class SetWorld implements CommandExecutor {
 			worldString = args[0];
 			if (Bukkit.getWorld(worldString) == null) {
 
-				String message = ArcticDarkzone.INSTANCE.getConfig().getString("messages.world-does-not-exist");
+				String message = AConfig.getString("messages.world-does-not-exist");
 				message = message.replaceAll("%world%", worldString);
 
 				AOutput.error(player, message);
@@ -38,7 +38,7 @@ public class SetWorld implements CommandExecutor {
 			AConfig.set("darkzone-world", worldString);
 		}
 
-		String message = ArcticDarkzone.INSTANCE.getConfig().getString("messages.set-world");
+		String message = AConfig.getString("messages.set-world");
 		message = message.replaceAll("%world%", worldString);
 
 		ArcticDarkzone.INSTANCE.saveConfig();

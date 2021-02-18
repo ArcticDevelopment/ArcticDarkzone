@@ -30,8 +30,11 @@ public class PortalListener implements Listener {
 
 		player.teleport(ASerializer.deserializeLocation(AConfig.getString("exit-teleport-location")));
 
+		System.out.println(AConfig.getBoolean("spawn-fireworks-on-darkzone-exit"));
+
 		if (AConfig.getBoolean("spawn-fireworks-on-darkzone-exit")) {
 
+			System.out.println("should be spawning fireworks");
 			location = player.getLocation();
 			Firework firework = (Firework) location.getWorld().spawnEntity(location, EntityType.FIREWORK);
 			FireworkMeta fireworkMeta = firework.getFireworkMeta();
@@ -43,5 +46,6 @@ public class PortalListener implements Listener {
 			firework.detonate();
 
 		}
+		System.out.println("not spawning fireworks");
 	}
 }

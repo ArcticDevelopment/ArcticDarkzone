@@ -19,3 +19,7 @@ dependencies {
 
     compile 'com.github.ArcticDevelopment:ArcticAPI:1.4.3'
 }
+shadowJar {
+
+    relocate 'dev.kyro.arcticapi', 'dev.kyro.arcticdarkzone.arcticapi'
+}
