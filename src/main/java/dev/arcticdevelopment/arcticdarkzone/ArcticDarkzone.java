@@ -1,5 +1,6 @@
 package dev.arcticdevelopment.arcticdarkzone;
 
+import dev.arcticdevelopment.arcticdarkzone.Commands.Reload;
 import dev.arcticdevelopment.arcticdarkzone.Commands.SetExitLocation;
 import dev.arcticdevelopment.arcticdarkzone.Commands.SetWorld;
 import dev.arcticdevelopment.arcticdarkzone.listeners.CommandListener;
@@ -39,6 +40,7 @@ public class ArcticDarkzone extends JavaPlugin {
 
 		getCommand("setexit").setExecutor(new SetExitLocation());
 		getCommand("setworld").setExecutor(new SetWorld());
+		getCommand("areload").setExecutor(new Reload());
 	}
 
 	private void registerListeners() {

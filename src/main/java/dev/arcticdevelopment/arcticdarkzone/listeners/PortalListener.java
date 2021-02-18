@@ -32,7 +32,7 @@ public class PortalListener implements Listener {
 
 		System.out.println(AConfig.getBoolean("spawn-fireworks-on-darkzone-exit"));
 
-		if (AConfig.getBoolean("spawn-fireworks-on-darkzone-exit")) {
+		if (ArcticDarkzone.INSTANCE.getConfig().getBoolean("spawn-fireworks-on-darkzone-exit")) {
 
 			System.out.println("should be spawning fireworks");
 			location = player.getLocation();

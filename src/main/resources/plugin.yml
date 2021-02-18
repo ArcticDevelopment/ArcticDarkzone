@@ -1,8 +1,9 @@
 name: ArcticDarkzone
 authors: [ KyroKrypt, Finn ]
-version: 1.0.0
+version: 1.0.1
 main: dev.arcticdevelopment.arcticdarkzone.ArcticDarkzone
 description: Darkzone plugin
 commands:
   setexit:
   setworld:
+  areload:

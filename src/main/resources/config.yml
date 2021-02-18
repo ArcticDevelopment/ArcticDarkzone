@@ -18,6 +18,7 @@ messages:
   set-exit-inside-darkzone: '&fYou can not set the exit inside the darkzone world!'
   bypassed-darkzone: '&fYou were able to execute %command% because you have permission to bypass the darkzone'
   permission-denied: '&cYou do not have permission to use that command!'
+  reloaded-config: '&fSuccessfully reloaded config!'
 spawn-fireworks-on-darkzone-exit: true
 darkzone-world: darkzone
 exit-teleport-location:
