@@ -21,7 +21,7 @@ public class CommandListener implements Listener {
 
 		if (player.hasPermission("arctic.darkzone.bypass")) {
 
-			String message = AConfig.getString("bypassed-darkzone");
+			String message = AConfig.getString("messages.bypassed-darkzone");
 			AOutput.send(player, message);
 			return;
 		}
