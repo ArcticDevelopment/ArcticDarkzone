@@ -1,5 +1,6 @@
 package dev.arcticdevelopment.arcticdarkzone.listeners;
 
+import dev.arcticdevelopment.arcticdarkzone.ArcticDarkzone;
 import dev.kyro.arcticapi.data.AConfig;
 import dev.kyro.arcticapi.misc.AOutput;
 import org.bukkit.entity.Player;
@@ -21,12 +22,12 @@ public class CommandListener implements Listener {
 
 		if (player.hasPermission("arctic.darkzone.bypass")) {
 
-			String message = AConfig.getString("messages.bypassed-darkzone");
+			String message = ArcticDarkzone.INSTANCE.getConfig().getString("messages.bypassed-darkzone");
 			AOutput.send(player, message);
 			return;
 		}
 
-		AOutput.error(player, AConfig.getString("messages.no-permission"));
+		AOutput.error(player, ArcticDarkzone.INSTANCE.getConfig().getString("messages.no-permission"));
 		event.setCancelled(true);
 	}
 }

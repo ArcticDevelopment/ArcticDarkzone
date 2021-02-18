@@ -13,7 +13,7 @@ error-prefix: '&8[&c&lA&8]&f '
 messages:
   no-permission: '&cYou may not use commands here!'
   set-world: '&fSet darkzone world to %world%!'
-  world-does-not-exsist: '&cWorld %world% does not exsist'
+  world-does-not-exist: '&cWorld %world% does not exist'
   set-exit-location: '&fSet darkzone exit location'
   set-exit-inside-darkzone: '&fYou can not set the exit inside the darkzone world!'
   bypassed-darkzone: '&fYou were able to execute %command% because you have permission to bypass the darkzone'

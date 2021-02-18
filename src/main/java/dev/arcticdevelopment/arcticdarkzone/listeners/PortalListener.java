@@ -1,5 +1,6 @@
 package dev.arcticdevelopment.arcticdarkzone.listeners;
 
+import dev.arcticdevelopment.arcticdarkzone.ArcticDarkzone;
 import dev.kyro.arcticapi.data.AConfig;
 import dev.kyro.arcticapi.data.ASerializer;
 import org.bukkit.Color;
@@ -22,7 +23,8 @@ public class PortalListener implements Listener {
 		Player player = event.getPlayer();
 		Location location = player.getLocation();
 
-		if (!(location.getWorld().getName().equals(AConfig.getString("messages.darkzone-world")))) {
+
+		if (!(location.getWorld().getName().equals(ArcticDarkzone.INSTANCE.getConfig().getString("messages.darkzone-world")))) {
 
 			return;
 		}
