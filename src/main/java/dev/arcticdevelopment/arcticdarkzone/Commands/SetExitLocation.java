@@ -22,7 +22,8 @@ public class SetExitLocation implements CommandExecutor {
 
 		if (location.getWorld().getName().equals(AConfig.get("darkzone-world"))) {
 
-			AOutput.error(player, "You can not set the exit inside the darkzone world!");
+			String message = AConfig.getString("set-exit-inside-darkzone:");
+			AOutput.error(player, message);
 			return false;
 		}
 
