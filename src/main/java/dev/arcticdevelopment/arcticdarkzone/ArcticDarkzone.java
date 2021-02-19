@@ -1,11 +1,13 @@
 package dev.arcticdevelopment.arcticdarkzone;
 
-import dev.arcticdevelopment.arcticdarkzone.Commands.Reload;
-import dev.arcticdevelopment.arcticdarkzone.Commands.SetExitLocation;
-import dev.arcticdevelopment.arcticdarkzone.Commands.SetWorld;
+import dev.arcticdevelopment.arcticdarkzone.commands.BaseCommand;
+import dev.arcticdevelopment.arcticdarkzone.commands.Reload;
+import dev.arcticdevelopment.arcticdarkzone.commands.SetExitLocation;
+import dev.arcticdevelopment.arcticdarkzone.commands.SetWorld;
 import dev.arcticdevelopment.arcticdarkzone.listeners.CommandListener;
 import dev.arcticdevelopment.arcticdarkzone.listeners.PortalListener;
 import dev.kyro.arcticapi.ArcticAPI;
+import dev.kyro.arcticapi.commands.ABaseCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class ArcticDarkzone extends JavaPlugin {
@@ -38,9 +40,12 @@ public class ArcticDarkzone extends JavaPlugin {
 
 	private void registerCommands() {
 
-		getCommand("setexit").setExecutor(new SetExitLocation());
-		getCommand("setworld").setExecutor(new SetWorld());
-		getCommand("areload").setExecutor(new Reload());
+		ABaseCommand apiCommand = new BaseCommand("darkzone");
+
+		apiCommand.registerCommand(new SetExitLocation("setexit"));
+		apiCommand.registerCommand(new SetExitLocation("setworld"));
+		//TODO fix reload command
+		//apiCommand.registerCommand(new SetExitLocation("reload"));
 	}
 
 	private void registerListeners() {

@@ -1,20 +1,26 @@
-package dev.arcticdevelopment.arcticdarkzone.Commands;
+package dev.arcticdevelopment.arcticdarkzone.commands;
 
 import dev.arcticdevelopment.arcticdarkzone.ArcticDarkzone;
+import dev.kyro.arcticapi.commands.ASubCommand;
 import dev.kyro.arcticapi.data.AConfig;
 import dev.kyro.arcticapi.data.ASerializer;
 import dev.kyro.arcticapi.misc.AOutput;
 import org.bukkit.Location;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class SetExitLocation implements CommandExecutor {
-	@Override
-	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+import java.util.List;
 
-		if (!(sender instanceof Player)) return false;
+public class SetExitLocation extends ASubCommand {
+
+	public SetExitLocation(String name) {
+		super(name);
+	}
+
+	@Override
+	public void execute(CommandSender sender, List<String> args) {
+
+		if (!(sender instanceof Player)) return;
 
 		Player player = (Player) sender;
 		Location location = player.getLocation();
@@ -22,7 +28,7 @@ public class SetExitLocation implements CommandExecutor {
 
 		if (!player.hasPermission("arctic.darkzone.admin")) {
 			AOutput.error(player, AConfig.getString("messages.permission-denied"));
-			return false;
+			return;
 		}
 
 		if (location.getWorld().getName().equals(AConfig.get("darkzone-world"))) {
@@ -30,7 +36,7 @@ public class SetExitLocation implements CommandExecutor {
 			String message = AConfig.getString("messages.set-exit-inside-darkzone:");
 			message = message.replaceAll("%world%", location.getWorld().getName());
 			AOutput.error(player, message);
-			return false;
+			return;
 		}
 
 		AConfig.set("exit-teleport-location",tpStringLocation);
@@ -39,7 +45,5 @@ public class SetExitLocation implements CommandExecutor {
 		String message = AConfig.getString("messages.set-exit-location");
 		message = message.replaceAll("%world%", location.getWorld().getName());
 		AOutput.send(player, message);
-
-		return false;
 	}
 }
