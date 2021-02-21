@@ -1,12 +1,5 @@
-config-version: 1.1.0
-####################################################
-##                                                ##
-##         Arctic Darkzone Configuration          ##
-##           Developed by Finn and Kyro           ##
-##                                                ##
-####################################################
+config-version: 1.1.2
 
-# Set the plugin prefix
 prefix: '&7[&b&lA&7]&f '
 error-prefix: '&8[&c&lA&8]&f '
 
@@ -19,6 +12,11 @@ messages:
   bypassed-darkzone: '&fYou were able to execute %command% because you have permission to bypass the darkzone'
   permission-denied: '&cYou do not have permission to use that command!'
   reloaded-config: '&fSuccessfully reloaded config!'
+
 spawn-fireworks-on-darkzone-exit: true
 darkzone-world: darkzone
 exit-teleport-location:
+whitelisted-commands:
+  - /f c f
+  - /f f
+  - /f c p

@@ -1,6 +1,6 @@
 name: ArcticDarkzone
 authors: [ KyroKrypt, Finn ]
-version: 1.0.1
+version: 1.0.2
 main: dev.arcticdevelopment.arcticdarkzone.ArcticDarkzone
 description: Darkzone plugin
 commands:

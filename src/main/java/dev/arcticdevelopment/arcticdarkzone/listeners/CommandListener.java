@@ -9,6 +9,8 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 
+import java.util.List;
+
 public class CommandListener implements Listener {
 
 	@EventHandler(ignoreCancelled = true)
@@ -28,6 +30,9 @@ public class CommandListener implements Listener {
 			AOutput.send(player, message);
 			return;
 		}
+		List<String> whitelistedCommands = AConfig.getStringList("whitelisted-commands");
+		//TODO make this use a regex expression
+		if(whitelistedCommands.contains(command)) return;
 
 		AOutput.error(player, AConfig.getString("messages.command-blocked"));
 		event.setCancelled(true);
