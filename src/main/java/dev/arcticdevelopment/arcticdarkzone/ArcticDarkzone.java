@@ -43,7 +43,7 @@ public class ArcticDarkzone extends JavaPlugin {
 		ABaseCommand apiCommand = new BaseCommand("darkzone");
 
 		apiCommand.registerCommand(new SetExitLocation("setexit"));
-		apiCommand.registerCommand(new SetExitLocation("setworld"));
+		apiCommand.registerCommand(new SetWorld("setworld"));
 		//TODO fix reload command
 		//apiCommand.registerCommand(new SetExitLocation("reload"));
 	}

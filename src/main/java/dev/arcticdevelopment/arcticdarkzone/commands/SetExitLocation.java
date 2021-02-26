@@ -5,6 +5,7 @@ import dev.kyro.arcticapi.commands.ASubCommand;
 import dev.kyro.arcticapi.data.AConfig;
 import dev.kyro.arcticapi.data.ASerializer;
 import dev.kyro.arcticapi.misc.AOutput;
+import javafx.scene.shape.Arc;
 import org.bukkit.Location;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -33,7 +34,7 @@ public class SetExitLocation extends ASubCommand {
 
 		if (location.getWorld().getName().equals(AConfig.get("darkzone-world"))) {
 
-			String message = AConfig.getString("messages.set-exit-inside-darkzone:");
+			String message = ArcticDarkzone.INSTANCE.getConfig().getString("messages.set-exit-inside-darkzone");
 			message = message.replaceAll("%world%", location.getWorld().getName());
 			AOutput.error(player, message);
 			return;
